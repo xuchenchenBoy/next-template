@@ -1,14 +1,13 @@
 import { createStore, applyMiddleware } from 'redux'
 import createSagaMiddleware, { END } from 'redux-saga'
+import rootReducers, { initialReducers } from './rootReducers'
+import rootSagas from './rootSagas'
 
-const configureStore = (rootReducers, initState) => {
+const configureStore = (initState = initialReducers) => {
   const sagaMiddleware = createSagaMiddleware()
   const store = createStore(rootReducers, initState, applyMiddleware(sagaMiddleware))
-  return {
-    ...store,
-    runSaga: sagaMiddleware.run,
-    close: () => store.dispatch(END)
-  }
+  store.sagaTask = sagaMiddleware.run(rootSagas)
+  return store;
 }
 
 export default configureStore;

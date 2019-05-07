@@ -1,13 +1,16 @@
 import Head from 'next/head';
 import Link from 'next/link'
-import axios from 'axios'
 import React from 'react'
-import styles from '../styles/pages/index.less'
+import styles from '../styles/pages/home.less'
+import * as types from '../model/home/types'
+import { connect } from 'react-redux'
 
-class IndexPage extends React.PureComponent {
-  static async getInitialProps() {
-    const res = await axios.get('http://rap2api.taobao.org/app/mock/10621/integral/user/statRank');
-    return { stats: res.data }
+class Home extends React.PureComponent {
+  static async getInitialProps({ ctx }) {
+    const { store } = ctx;
+    store.dispatch({
+      type: types.HOME_INFO_REQ
+    })
   }
 
   componentDidMount() {
@@ -15,17 +18,19 @@ class IndexPage extends React.PureComponent {
   }
 
   render() {
+    const { homeInfo } = this.props;
+    const { status } = homeInfo;
+
     return (
       <div>
         <Head>
-          <title>My page title</title>
-          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+          <title>home title</title>
         </Head>
-        <p className={styles.color}>Hello world!</p>
+        <p className={styles.color}>{status}</p>
         <Link href="/about"><a href="">link about</a></Link>
       </div>
     );
   }
 }
 
-export default IndexPage;
+export default connect((state => ({ ...state.home })))(Home);

@@ -1,17 +1,18 @@
 import * as types from './types'
 
 const INIT_STATE = {
-  page: 'home'
+  
 }
 
 export const homeInfo = (state = INIT_STATE, action) => {
   switch (action.type) {
     case types.HOME_INFO_REQ:
-      return { ...state, status: 'reqIng', status: 0 };
-    case types.HOME_INFO_SUC:
-      return { ...state, status: 'reqSuc', status: action.payload };
+      return { ...state, status: 'reqIng' };
+    case types.HOME_INFO_SUC: {
+      return { ...state, status: 'reqSuc' };
+    }
     case types.HOME_INFO_FAIL:
-    return { ...state, status: 'reqFail', status: 2 };
+    return { ...state, status: 'reqFail' };
     default:
       return state;
   }

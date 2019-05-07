@@ -5,4 +5,8 @@ const rootReducers = combineReducers({
   home: home.reducer,
 })
 
+const initialReducers = {}
+
+export { initialReducers };
+
 export default rootReducers;
