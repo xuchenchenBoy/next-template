@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link'
 import React from 'react'
-import styles from '../styles/pages/home.less'
+import styles from 'styles/pages/home.less'
 import * as types from '../model/home/types'
 import { connect } from 'react-redux'
 
