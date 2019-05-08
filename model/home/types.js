@@ -1,3 +1,3 @@
-export const HOME_INFO_REQ = Symbol();
-export const HOME_INFO_SUC = Symbol();
-export const HOME_INFO_FAIL = Symbol();
+export const INFO_REQ = 'HOME.INFO_REQ';
+export const INFO_SUC = 'HOME.INFO_REQ';
+export const INFO_FAIL = 'HOME.INFO_REQ';

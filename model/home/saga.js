@@ -4,7 +4,7 @@ import { getReq } from '../../utils/request'
 
 function *getInfo(store) {
   while(1) {
-    yield take(types.HOME_INFO_REQ)
+    yield take(types.INFO_REQ)
     try {
       const res = yield call(getReq,
         {
@@ -12,12 +12,12 @@ function *getInfo(store) {
         }
       )
       yield put({
-        type: types.HOME_INFO_SUC, 
+        type: types.INFO_SUC, 
         payload: res
       })
     } catch (err) {
       yield put({
-        type: types.HOME_INFO_FAIL
+        type: types.INFO_FAIL
       })
     }
   }

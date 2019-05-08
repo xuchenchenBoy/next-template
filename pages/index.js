@@ -9,12 +9,12 @@ class Home extends React.PureComponent {
   static async getInitialProps({ ctx }) {
     const { store } = ctx;
     store.dispatch({
-      type: types.HOME_INFO_REQ
+      type: types.INFO_REQ
     })
   }
 
   componentDidMount() {
-    console.log('did mount3')
+    console.log('did mount')
   }
 
   render() {
