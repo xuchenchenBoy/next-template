@@ -14,7 +14,7 @@ class Home extends React.PureComponent {
   }
 
   componentDidMount() {
-    console.log('did mount')
+    console.log('did mount3')
   }
 
   render() {
@@ -27,7 +27,7 @@ class Home extends React.PureComponent {
           <title>home title</title>
         </Head>
         <p className={styles.color}>{status}</p>
-        <Link href="/about"><a href="">link about</a></Link>
+        <a href="/about">link about</a>
       </div>
     );
   }

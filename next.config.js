@@ -7,7 +7,7 @@ const customWebpack = function(config, { isServer }) {
   if (
       !isServer 
       && config.optimization.splitChunks.cacheGroups.styles
-    ) {
+  ) { // css 文件分离
     delete config.optimization.splitChunks.cacheGroups.styles
   }
   config.plugins.push(new CleanWebpackPlugin())
