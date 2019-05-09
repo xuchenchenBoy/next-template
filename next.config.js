@@ -10,6 +10,7 @@ const customWebpack = function(config, { isServer, dev }) {
     '@store': path.resolve(__dirname, './store'),
     '@utils': path.resolve(__dirname, './utils'),
     '@components': path.resolve(__dirname, './components'),
+    '@services': path.resolve(__dirname, './services'),
     ...config.resolve.alias
   }
   if (

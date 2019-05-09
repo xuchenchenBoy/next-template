@@ -10,8 +10,6 @@ class Index extends React.PureComponent {
         <Head>
           <title>index title</title>
         </Head>
-        <a href="/about">link about</a>
-        &nbsp;&nbsp;
         <a href="/home">link home</a>
       </div>
     );
