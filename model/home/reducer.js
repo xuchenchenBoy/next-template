@@ -1,7 +1,7 @@
 import * as types from './types'
 
 const INIT_STATE = {
-  
+  homeInfo: {}
 }
 
 export const homeInfo = (state = INIT_STATE, action) => {
@@ -12,7 +12,7 @@ export const homeInfo = (state = INIT_STATE, action) => {
       return { ...state, status: 'reqSuc' };
     }
     case types.INFO_FAIL:
-    return { ...state, status: 'reqFail' };
+      return { ...state, status: 'reqFail' };
     default:
       return state;
   }

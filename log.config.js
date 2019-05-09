@@ -4,18 +4,12 @@ const logPath = path.resolve(__dirname, 'log')
 
 log4js.configure({
   appenders: {
+    out: { type: 'stdout' },
     info_file: {
       type : 'file',
       filename: `${logPath}/info/info.log`,
       maxLogSize : 20 * 1024 * 1024,
       backups : 3
-    },
-    warn_file: { 
-      type: 'dateFile',
-      filename: `${logPath}/warns/log`,
-      pattern: 'yyyy-MM-dd.log',
-      alwaysIncludePattern: true,
-      daysToKeep: 30
     },
     error_file: {
       type: 'dateFile',
@@ -27,14 +21,15 @@ log4js.configure({
   },
   categories: {
     default: { appenders: ['info_file'], level: 'info' },
-    warn: { appenders: ['warn_file'], level: 'warn'},
+    out: { appenders: ['out'], level: 'debug' },
     error: { appenders: ['error_file'], level: 'error' }
   },
-  disableClustering: true
+  pm2: true,
+  pm2InstanceVar: 'INSTANCE_ID'
 })
 
-const logs = (app, mode = '') => {
-  app.use(log4js.connectLogger(log4js.getLogger(mode), {
+const logs = (app) => {
+  app.use(log4js.connectLogger(log4js.getLogger(), {
     format: ':method :url :status :response-time ms'
   }))
 }

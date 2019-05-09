@@ -6,6 +6,13 @@ module.exports = {
     watch: false,
     max_memory_restart: "1G",
     exec_mode: "cluster",
+    instance_var: "INSTANCE_ID",
+    env: {
+      NODE_ENV: "development",
+    },
+    env_production: {
+      NODE_ENV: "production",
+    }
   }],
 
   deploy : {

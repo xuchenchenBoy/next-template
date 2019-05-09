@@ -8,7 +8,7 @@
     "dev": "cross-env NODE_ENV=development node server.js",
     "build": "next build",
     "start": "cross-env NODE_ENV=production node server.js",
-    "deploy": "pm2 start ecosystem.config.js",
+    "deploy": "pm2 start ecosystem.config.js --env production",
     "stop": "pm2 stop all",
     "restart": "pm2 reload all",
     "delete": "pm2 delete all",
@@ -39,6 +39,7 @@
     "redux-saga": "^1.0.2"
   },
   "devDependencies": {
-    "autoprefixer": "^9.5.1"
+    "autoprefixer": "^9.5.1",
+    "pm2-intercom": "^1.0.0"
   }
 }

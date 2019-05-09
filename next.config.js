@@ -3,7 +3,15 @@ const path = require('path')
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const customWebpack = function(config, { isServer }) {
-  config.resolve.alias.styles = path.resolve(__dirname, './styles');
+  config.resolve.alias = {
+    '@styles': path.resolve(__dirname, './styles'),
+    '@model': path.resolve(__dirname, './model'),
+    '@static': path.resolve(__dirname, './static'),
+    '@store': path.resolve(__dirname, './store'),
+    '@utils': path.resolve(__dirname, './utils'),
+    '@components': path.resolve(__dirname, './components'),
+    ...config.resolve.alias
+  }
   if (
       !isServer 
       && config.optimization.splitChunks.cacheGroups.styles
@@ -16,7 +24,7 @@ const customWebpack = function(config, { isServer }) {
 
 module.exports = withLess({
   cssModules: true,
-  distDir: 'build',
+  distDir: 'dist',
   cssLoaderOptions: {
     importLoaders: 1,
     localIdentName: '[local]__[hash:base64:5]'
