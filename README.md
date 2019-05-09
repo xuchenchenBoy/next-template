@@ -30,4 +30,13 @@ React的服务端渲染模板
 +-- READMD.md
 ```
 
+## what's included?
+* React
+* Redux
+* Less
+* Autoprefixed CSS
+* Css Module
+* Code Split
+
+
 更多配置请查看 [NEXT](http://nextjs.frontendx.cn/)
