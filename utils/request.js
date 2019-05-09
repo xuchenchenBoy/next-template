@@ -29,9 +29,13 @@ const request = async function({
 }
 
 const postReq = async function(payload) {
-  return await request({ method: 'POST' , ...payload, headers: {
+  return await request({ 
+    method: 'POST', 
+    ...payload, 
+    headers: {
     'Content-Type': 'application/x-www-form-urlencoded'
-  }})
+    }
+  })
 }
 
 const getReq = function(payload) {

@@ -10,6 +10,10 @@ React的服务端渲染模板
 ```
 +-- components                         组件
 +-- model                              数据层
+|-- index.js                           数据注册
+|-- reducer.js                         state管理
+|-- saga.js                            业务逻辑管理
+|-- types.js                           类型定义
 +-- pages                              页面
 +-- services                           请求服务
 +-- static                             静态文件

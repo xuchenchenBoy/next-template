@@ -7,7 +7,7 @@ import { connect } from 'react-redux'
 class Home extends React.PureComponent {
   static async getInitialProps({ ctx }) {
     const { store } = ctx;
-    store.dispatch({
+    store.dispatch({ // 发起请求
       type: types.INFO_REQ
     })
   }
