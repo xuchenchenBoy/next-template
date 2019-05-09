@@ -1,4 +1,5 @@
 # SSR（React)
+React的服务端渲染模板
 
 ## Script
 `npm run dev` 本地调试
@@ -24,4 +25,4 @@
 +-- READMD.md
 ```
 
-[更多配置请查看](http://nextjs.frontendx.cn/)
+更多配置请查看 [NEXT](http://nextjs.frontendx.cn/)
