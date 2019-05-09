@@ -22,10 +22,8 @@ const request = async function({
       baseURL: '',
       headers
     })
-    console.log('res=', res.data)
     return res.data;
   } catch (err) {
-    console.log('err=')
     return err;
   }
 }
@@ -33,7 +31,7 @@ const request = async function({
 const postReq = async function(payload) {
   return await request({ method: 'POST' , ...payload, headers: {
     'Content-Type': 'application/x-www-form-urlencoded'
-  } })
+  }})
 }
 
 const getReq = function(payload) {
