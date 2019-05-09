@@ -22,9 +22,10 @@ const request = async function({
       baseURL: '',
       headers
     })
+    console.log('res=', res.data)
     return res.data;
   } catch (err) {
-    console.log('err=', err)
+    console.log('err=')
     return err;
   }
 }
