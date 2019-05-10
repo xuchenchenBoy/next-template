@@ -1,5 +1,3 @@
-import homepage from './homepage';
-
 let model = []
 const matchFiles = require.context('../model', false, /.js$/)
 matchFiles.keys().forEach(key => {
