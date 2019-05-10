@@ -3,9 +3,7 @@ import React from 'react'
 import styles from '@styles/pages/home.less'
 
 class Home extends React.PureComponent {
-  static async getInitialProps({ ctx }) {
-    
-  }
+  
 
   render() {
 

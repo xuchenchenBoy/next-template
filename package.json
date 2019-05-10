@@ -19,11 +19,14 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "dva-no-router": "^1.2.1",
     "express": "^4.16.4",
     "next": "^8.1.0",
     "qs": "^6.7.0",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.0.3"
   },
   "devDependencies": {
     "@zeit/next-less": "^1.0.1",

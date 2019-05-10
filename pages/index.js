@@ -1,19 +1,38 @@
-import Head from 'next/head';
-import React from 'react'
 
-class Index extends React.PureComponent {
-  static async getInitialProps() {}
+import Link from 'next/link';
+import React from 'react';
+import WithDva from '../utils/store';
+
+class Page extends React.Component {
+  static async getInitialProps(props) {
+    const {
+      pathname, query, isServer, store,
+    } = props;
+    await store.dispatch({ type: 'index/init' });
+    return {
+      pathname, 
+      query, 
+      isServer, 
+    };
+  }
+
+  clickDiv = () => {
+    this.props.dispatch({ 
+      type: 'index/caculate', 
+      delta: 1 
+    })
+  }
 
   render() {
+    const { index } = this.props;
+    const { count } = index;
     return (
-      <div>
-        <Head>
-          <title>index title</title>
-        </Head>
-        <a href="/home">link home</a>
+      <div onClick={this.clickDiv}>
+        <p>click me</p>
+        <p>{count}</p>
       </div>
     );
   }
 }
 
-export default Index;
+export default WithDva((state) => { return { index: state.index }; })(Page);
