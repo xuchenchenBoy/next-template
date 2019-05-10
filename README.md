@@ -26,7 +26,7 @@ React的服务端渲染模板
 
 ## what's included?
 * React
-* Redux
+* Dva
 * Less
 * Autoprefixed CSS
 * Css Module
