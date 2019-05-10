@@ -1,9 +1,5 @@
 import App, { Container } from 'next/app'
 import React from 'react'
-import { Provider } from 'react-redux'
-import withRedux from 'next-redux-wrapper'
-import withReduxSaga from 'next-redux-saga'
-import configureStore from '@store'
 
 class IndexApp extends App {
   static async getInitialProps ({ Component, ctx }) {
@@ -17,15 +13,13 @@ class IndexApp extends App {
   }
 
   render() {
-    const { Component, pageProps, store } = this.props
+    const { Component, pageProps } = this.props
     return (
       <Container>
-        <Provider store={store}>
           <Component {...pageProps} />
-        </Provider>
       </Container>
     )
   }
 }
 
-export default withRedux(configureStore)(withReduxSaga(IndexApp))
+export default IndexApp

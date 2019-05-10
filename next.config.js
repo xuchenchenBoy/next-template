@@ -6,12 +6,9 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const customWebpack = function(config, { isServer, dev }) {
   config.resolve.alias = {
     '@styles': path.resolve(__dirname, './styles'),
-    '@model': path.resolve(__dirname, './model'),
     '@static': path.resolve(__dirname, './static'),
-    '@store': path.resolve(__dirname, './store'),
     '@utils': path.resolve(__dirname, './utils'),
     '@components': path.resolve(__dirname, './components'),
-    '@services': path.resolve(__dirname, './services'),
     ...config.resolve.alias
   }
   if (
